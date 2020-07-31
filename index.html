@@ -26,12 +26,83 @@
 			hr {
 				background-color: var(--cor);
 			}
+			canvas{
+				-moz-user-select: none;
+				-webkit-user-select: none;
+				-ms-user-select: none;
+			}
 		</style>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+		<script type="text/javascript">
+			var config = {
+				type: 'line',
+				data: {
+					labels: ['1', '2', '3', '4', '5', '6', '7'],
+					datasets: [{
+						label: 'My First dataset',
+						backgroundColor: '#e2e2e2',
+						borderColor: '#e2e2e2',
+						data: [
+							13,
+							11,
+							3
+						],
+						fill: false,
+					}]
+				},
+				options: {
+					responsive: true,
+					title: {
+						display: true,
+						text: 'Chart.js Line Chart'
+					},
+					tooltips: {
+						mode: 'index',
+						intersect: false,
+					},
+					hover: {
+						mode: 'nearest',
+						intersect: true
+					},
+					scales: {
+						xAxes: [{
+							display: true,
+							scaleLabel: {
+								display: true,
+								labelString: 'RPM'
+							}
+						}],
+						yAxes: [{
+							display: true,
+							scaleLabel: {
+								display: true,
+								labelString: 'CV'
+							}
+						}]
+					}
+				}
+			};
+			
+			window.onload = function() {
+				var ctx = document.getElementById('canvas').getContext('2d');
+				window.myLine = new Chart(ctx, config);
+			};
+		</script>
 	</head>
 	<body>
 		<h1>Dinamômetro Móvel</h1>
 		<hr>
-
+		<div class="container" style="width:100%;margin:0px;padding:0px;">
+			<div class="row">
+				<div class="col-sm">
+					<canvas id="canvas"></canvas>
+				</div>
+				<div class="col-sm">
+					
+				</div>
+			</div>
+		</div>
+		
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
