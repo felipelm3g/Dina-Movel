@@ -37,15 +37,32 @@
 			var config = {
 				type: 'line',
 				data: {
-					labels: ['1', '2', '3', '4', '5', '6', '7'],
+					labels: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
 					datasets: [{
-						label: 'Cavalos',
+						label: 'CV',
 						backgroundColor: '#e2e2e2',
 						borderColor: '#e2e2e2',
 						data: [
+							0,
+							2,
+							4,
+							7,
+							9,
 							13,
-							11,
-							3
+							20,
+							27,
+							32,
+							39,
+							41,
+							50,
+							55,
+							62,
+							66,
+							73,
+							78,
+							75,
+							80,
+							86,
 						],
 						fill: false,
 					}]
@@ -53,7 +70,7 @@
 				options: {
 					responsive: true,
 					title: {
-						display: true,
+						display: false,
 						text: 'Chart.js Line Chart'
 					},
 					tooltips: {
@@ -69,7 +86,10 @@
 							display: true,
 							scaleLabel: {
 								display: true,
-								labelString: 'RPM'
+								labelString: 'x1000 RPM'
+							},
+							ticks: {
+								beginAtZero: true
 							}
 						}],
 						yAxes: [{
@@ -77,6 +97,9 @@
 							scaleLabel: {
 								display: true,
 								labelString: 'CV'
+							},
+							ticks: {
+								beginAtZero: true
 							}
 						}]
 					}
